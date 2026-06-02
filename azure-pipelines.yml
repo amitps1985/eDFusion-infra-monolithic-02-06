@@ -33,7 +33,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'''
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
         backendServiceArm: 'applesc'
         backendAzureRmOverrideSubscriptionID: 'ca0e89ec-4b6f-43aa-93b2-058a2da5be0d'
         backendAzureRmResourceGroupName: 'edfusion-rg'
