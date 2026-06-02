@@ -33,24 +33,24 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'''
+        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'
         backendServiceArm: 'applesc'
         backendAzureRmOverrideSubscriptionID: 'ca0e89ec-4b6f-43aa-93b2-058a2da5be0d'
         backendAzureRmResourceGroupName: 'edfusion-rg'
         backendAzureRmStorageAccountName: 'stg1983'
         backendAzureRmContainerName: 'container'
-        backendAzureRmKey: 'dev.terraform.tfstate'
+        backendAzureRmKey: 'terraform.tfstate'
     - task: TerraformTask@5
       displayName: terraform validate
       inputs:
         provider: 'azurerm'
         command: 'validate'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'''
+        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'
     - task: TerraformTask@5
       displayName: terraform plan
       inputs:
         provider: 'azurerm'
         command: 'plan'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'''
+        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/dev'
         environmentServiceNameAzureRM: 'applesc'
         environmentAzureRmOverrideSubscriptionID: 'ca0e89ec-4b6f-43aa-93b2-058a2da5be0d'
