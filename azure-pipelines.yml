@@ -49,5 +49,6 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'plan'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
         environmentServiceNameAzureRM: 'applesc'
         environmentAzureRmOverrideSubscriptionID: 'ca0e89ec-4b6f-43aa-93b2-058a2da5be0d'
