@@ -39,3 +39,15 @@ stages:
         backendAzureRmStorageAccountName: 'stg1983'
         backendAzureRmContainerName: 'container'
         backendAzureRmKey: 'dev.terraform.tfstate'
+    - task: TerraformTask@5
+      displayName: terraform validate
+      inputs:
+        provider: 'azurerm'
+        command: 'validate'
+    - task: TerraformTask@5
+      displayName: terraform plan
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        environmentServiceNameAzureRM: 'applesc'
+        environmentAzureRmOverrideSubscriptionID: 'ca0e89ec-4b6f-43aa-93b2-058a2da5be0d'
